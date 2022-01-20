@@ -1,0 +1,40 @@
+﻿
+<div style="background-color: #4479a1; border: 1px solid black ">
+    <table style="width:100%">
+        <tr>
+            <td style="width: 25%; text-align: left;border: 1px solid black;">
+                <img src="~/Content/image/fb.png" alt="icon" style="width:40px;height:40px;"/>
+                @Html.ActionLink("XXXXXXX", "Index", "Dashboard",null,new {@style="color:white;"})
+            </td>
+
+            <td style="width:40%;text-align:center;border:1px solid; ">
+                <div>
+                    @*<form action="/" method="post" >
+            <input type="text" placeholder="Search people..." style="width:500px;" />
+            <input type="submit" name="#" value="Search" />
+        </form>*@
+                    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+                    {
+                        @Html.TextBox("Search",null,new { style = "width:800px" })<input type="submit" value="Search" />
+                     }
+
+                </div>
+            </td>
+            <td style="width:40%;text-align:center;border:1px solid;">
+                <span>
+                    @Html.ActionLink(@Session["UserName"].ToString(), "Index", "Dashboard", new { style = "color:white;" })
+                </span>
+                <span>
+                    @Html.ActionLink("Chat", "Index", "Dashboard", new { style = "color:white;" })
+                </span>
+                <spam>
+                    @Html.ActionLink("Notification", "Index", "Dashboard", new { style = "color:white;" })
+                </spam>
+                <spam>
+                    @Html.ActionLink("Logout", "Logout", "Dashboard", new { style = "color:white;" })
+                </spam>
+            </td>
+        </tr>
+    </table>
+</div>
+
